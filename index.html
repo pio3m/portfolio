@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -14,14 +13,22 @@
   </header>
 
   <main id="content">
-    <p>Wczytywanie projektów...</p>
+    <div include-html="components/001-vr-medical.html"></div>
+    <div include-html="components/002-dudechess.html"></div>
   </main>
 
   <footer>
     <p>&copy; 2024 Piotr Dul • piotr.dul@noinputsignal.com</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="script.js"></script>
+  <script>
+    // Prosty include HTML (bez frameworków)
+    document.querySelectorAll('[include-html]').forEach(async el => {
+      const file = el.getAttribute('include-html');
+      const res = await fetch(file);
+      const html = await res.text();
+      el.innerHTML = html;
+    });
+  </script>
 </body>
 </html>
