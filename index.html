@@ -1,34 +1,427 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Piotr Dul – Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Full-Stack Developer Journey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Piotr Dul</h1>
-    <p>Full Stack Dev • Tworzę Nowoczesne Rozwiązania z Sztuczną Inteligencją</p>
-  </header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="pixel-cursor">▌</span>dev.story
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#beginning">Początek</a></li>
+                <li><a href="#projects">Projekty</a></li>
+                <li><a href="#startups">Startupy</a></li>
+                <li><a href="#mentoring">Mentoring</a></li>
+                <li><a href="#ai">AI & ML</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <main id="content">
-    <div include-html="components/001-vr-medical.html"></div>
-    <div include-html="components/002-dudechess.html"></div>
-  </main>
+    <!-- Hero Section -->
+    <section class="hero parallax-container">
+        <div class="parallax-bg" data-speed="0.5"></div>
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="Full-Stack Developer">Full-Stack Developer</h1>
+            <p class="hero-subtitle">Opowieść o pasji, kodzie i innowacjach</p>
+            <div class="hero-scroll">
+                <span>Przewiń w dół aby poznać historię</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Piotr Dul • piotr.dul@noinputsignal.com</p>
-  </footer>
+    <!-- Timeline Container -->
+    <div class="timeline-container">
+        <div class="timeline-line"></div>
 
-  <script>
-    // Prosty include HTML (bez frameworków)
-    document.querySelectorAll('[include-html]').forEach(async el => {
-      const file = el.getAttribute('include-html');
-      const res = await fetch(file);
-      const html = await res.text();
-      el.innerHTML = html;
-    });
-  </script>
+        <!-- Beginning Section -->
+        <section id="beginning" class="timeline-section" data-aos="fade-up">
+            <div class="timeline-marker">
+                <div class="marker-icon">👶</div>
+                <div class="marker-year">2015</div>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h2 class="section-title">Początek - Pasja do Gier i Kodu</h2>
+                    <div class="story-card">
+                        <div class="card-header">
+                            <span class="card-tag">ORIGIN STORY</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="story-text">
+                                Wszystko zaczęło się od fascynacji grami komputerowymi. Nie wystarczało mi tylko grać - 
+                                chciałem rozumieć, jak to wszystko działa. Pierwszy raz uruchomiłem edytor tekstu 
+                                i napisałem "Hello World" w PHP. To był moment, który zmienił wszystko.
+                            </p>
+                            <blockquote class="story-quote">
+                                "Kod to nie tylko narzędzie - to sposób na materializację marzeń."
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- First Projects Section -->
+        <section id="projects" class="timeline-section" data-aos="fade-up">
+            <div class="timeline-marker">
+                <div class="marker-icon">🛠</div>
+                <div class="marker-year">2017</div>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h2 class="section-title">Pierwsze Projekty - Hackathony i Prototypy</h2>
+                    <div class="story-card">
+                        <div class="card-header">
+                            <span class="card-tag">LEARNING PHASE</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="image-container parallax-image" data-tilt>
+                                <img src="hackathon.jpg" alt="Hackathon project" class="project-image">
+                                <div class="image-caption">Pierwszy hackathon - 48 godzin czystego kodu</div>
+                            </div>
+                            <p class="story-text">
+                                Hackathony stały się moją szkołą życia. Pierwsze nieprzespane noce, pizza o 3 rano, 
+                                frustracja z bugami i euforia po ich naprawie. Każdy projekt to nowa lekcja, 
+                                nowy sposób myślenia o problemach.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">HTML/CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Startups Section -->
+        <section id="startups" class="timeline-section" data-aos="fade-up">
+            <div class="timeline-marker">
+                <div class="marker-icon">🚀</div>
+                <div class="marker-year">2019</div>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h2 class="section-title">Startupy i Przełomy</h2>
+                    
+                    <!-- DudeChess Project -->
+                    <div class="story-card project-showcase">
+                        <div class="card-header">
+                            <span class="card-tag">AI PROJECT</span>
+                            <h3>DudeChess - AI Szachy</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="project-grid">
+                                <div class="project-image-wrapper">
+                                    <img src="dudechess.jpg" alt="DudeChess AI Chess" class="project-image parallax-hover">
+                                    <div class="image-overlay">
+                                        <a href="#" class="project-link">Zobacz Demo</a>
+                                    </div>
+                                </div>
+                                <div class="project-details">
+                                    <p>Sztuczna inteligencja grająca w szachy z wykorzystaniem algorytmów minimax i uczenia maszynowego. 
+                                    Projekt który wprowadził mnie w świat AI.</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Python</span>
+                                        <span class="tech-tag">TensorFlow</span>
+                                        <span class="tech-tag">React</span>
+                                        <span class="tech-tag">WebSocket</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VR Medical Project -->
+                    <div class="story-card project-showcase">
+                        <div class="card-header">
+                            <span class="card-tag">VR PROJECT</span>
+                            <h3>VR Medical - Symulator Medyczny</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="project-grid">
+                                <div class="project-image-wrapper">
+                                    <img src="vr.jpg" alt="VR Medical Simulator" class="project-image parallax-hover">
+                                    <div class="image-overlay">
+                                        <a href="#" class="project-link">Zobacz Demo</a>
+                                    </div>
+                                </div>
+                                <div class="project-details">
+                                    <p>Immersyjny symulator VR dla studentów medycyny. Realistyczne odwzorowanie procedur 
+                                    chirurgicznych z haptic feedback.</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Unity</span>
+                                        <span class="tech-tag">C#</span>
+                                        <span class="tech-tag">Oculus SDK</span>
+                                        <span class="tech-tag">Blender</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hodu Games -->
+                    <div class="story-card project-showcase">
+                        <div class="card-header">
+                            <span class="card-tag">GAME STUDIO</span>
+                            <h3>Hodu Games - Indie Studio</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="project-grid">
+                                <div class="project-image-wrapper">
+                                    <img src="hodu-games.jpg" alt="Hodu Games Studio" class="project-image parallax-hover">
+                                </div>
+                                <div class="project-details">
+                                    <p>Założenie własnego studia gier indie. Od konceptu przez development po marketing - 
+                                    pełny cykl produkcji gier mobilnych i webowych.</p>
+                                    <div class="achievement-stats">
+                                        <div class="stat">
+                                            <span class="stat-number">5</span>
+                                            <span class="stat-label">Wydanych Gier</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-number">50K+</span>
+                                            <span class="stat-label">Pobrań</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentoring Section -->
+        <section id="mentoring" class="timeline-section" data-aos="fade-up">
+            <div class="timeline-marker">
+                <div class="marker-icon">🎓</div>
+                <div class="marker-year">2021</div>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h2 class="section-title">Nauka i Mentoring</h2>
+                    <div class="story-card">
+                        <div class="card-header">
+                            <span class="card-tag">EDUCATION</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="image-container">
+                                <img src="python-course.jpg" alt="Python course for youth" class="project-image">
+                                <div class="image-caption">Kurs Python dla młodzieży - pierwsze kroki w programowaniu</div>
+                            </div>
+                            <p class="story-text">
+                                Przekazywanie wiedzy okazało się równie pasjonujące co jej zdobywanie. 
+                                Prowadzenie kursów programowania dla młodzieży pokazało mi, jak ważne jest 
+                                dzielenie się wiedzą i inspirowanie następnego pokolenia deweloperów.
+                            </p>
+                            <div class="mentoring-stats">
+                                <div class="stat">
+                                    <span class="stat-number">200+</span>
+                                    <span class="stat-label">Uczniów</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">15</span>
+                                    <span class="stat-label">Kursów</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-label">Godzin Nauczania</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Section -->
+        <section id="ai" class="timeline-section" data-aos="fade-up">
+            <div class="timeline-marker">
+                <div class="marker-icon">🧠</div>
+                <div class="marker-year">2023</div>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h2 class="section-title">AI i Nowe Kierunki</h2>
+                    <div class="story-card">
+                        <div class="card-header">
+                            <span class="card-tag">MACHINE LEARNING</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="story-text">
+                                Eksplozja AI w 2023 roku otworzyła nowe możliwości. Reinforcement Learning, 
+                                Large Language Models, Computer Vision - każda technologia to nowy świat do odkrycia.
+                            </p>
+                            
+                            <!-- Technical Article Section -->
+                            <div class="tech-article">
+                                <h4>Implementacja Q-Learning w Python</h4>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span class="code-lang">Python</span>
+                                        <a href="#" class="github-link">Zobacz na GitHub</a>
+                                    </div>
+                                    <pre><code class="language-python">class QLearningAgent:
+    def __init__(self, learning_rate=0.1, discount_factor=0.9):
+        self.q_table = defaultdict(lambda: defaultdict(float))
+        self.lr = learning_rate
+        self.gamma = discount_factor
+    
+    def update(self, state, action, reward, next_state):
+        current_q = self.q_table[state][action]
+        max_next_q = max(self.q_table[next_state].values()) if next_state else 0
+        
+        # Q-Learning formula
+        new_q = current_q + self.lr * (reward + self.gamma * max_next_q - current_q)
+        self.q_table[state][action] = new_q</code></pre>
+                                </div>
+                                <div class="article-diagram">
+                                    <img src="q-learning-diagram.jpg" alt="Q-Learning Process Diagram" class="diagram-image">
+                                </div>
+                            </div>
+
+                            <div class="ai-projects">
+                                <div class="ai-project">
+                                    <h5>🎮 Game AI with RL</h5>
+                                    <p>Agent grający w gry używając Deep Q-Networks</p>
+                                </div>
+                                <div class="ai-project">
+                                    <h5>💬 ChatBot Engine</h5>
+                                    <p>Własny silnik chatbota z NLP i intent recognition</p>
+                                </div>
+                                <div class="ai-project">
+                                    <h5>🖼️ Computer Vision</h5>
+                                    <p>Analiza obrazów medycznych z użyciem CNN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="timeline-section full-width" data-aos="fade-up">
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h2 class="section-title centered">Galeria Projektów</h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-item" data-tilt>
+                            <img src="project1.jpg" alt="Project 1" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <h4>E-commerce Platform</h4>
+                                <p>Full-stack aplikacja sklepowa</p>
+                                <div class="gallery-tags">
+                                    <span>PHP</span><span>React</span><span>MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-tilt>
+                            <img src="project2.jpg" alt="Project 2" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <h4>Data Visualization</h4>
+                                <p>Interaktywne dashboardy analityczne</p>
+                                <div class="gallery-tags">
+                                    <span>Python</span><span>D3.js</span><span>Flask</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-tilt>
+                            <img src="project3.jpg" alt="Project 3" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <h4>Mobile AR App</h4>
+                                <p>Aplikacja rozszerzonej rzeczywistości</p>
+                                <div class="gallery-tags">
+                                    <span>Unity</span><span>ARCore</span><span>C#</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-tilt>
+                            <img src="project4.jpg" alt="Project 4" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <h4>IoT Dashboard</h4>
+                                <p>System monitoringu urządzeń IoT</p>
+                                <div class="gallery-tags">
+                                    <span>Node.js</span><span>MongoDB</span><span>Socket.io</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="timeline-section final-section" data-aos="fade-up">
+            <div class="timeline-marker final-marker">
+                <div class="marker-icon">📬</div>
+                <div class="marker-year">2025</div>
+            </div>
+            <div class="section-content">
+                <div class="content-wrapper">
+                    <h2 class="section-title">Skontaktuj się ze mną</h2>
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <div class="contact-icon">✉️</div>
+                            <h4>Email</h4>
+                            <p>developer@example.com</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">💼</div>
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/developer</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">🐱</div>
+                            <h4>GitHub</h4>
+                            <p>github.com/developer</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">🐦</div>
+                            <h4>Twitter</h4>
+                            <p>@developer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="final-message">
+                        <blockquote class="final-quote">
+                            "Podróż developera nigdy się nie kończy. Każdy dzień to nowa możliwość nauki, 
+                            tworzenia i inspirowania innych."
+                        </blockquote>
+                        <div class="signature">
+                            <span class="pixel-cursor">▌</span>
+                            <span class="typing-text">Dziękuję za przeczytanie mojej historii</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop">
+        <span>↑</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
