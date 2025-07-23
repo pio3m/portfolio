@@ -1,0 +1,28 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f4f4f4 url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+  color: #333;
+}
+header, footer {
+  background: #1b1b1b;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+main {
+  padding: 1em 2em;
+}
+.post {
+  background: white;
+  padding: 1em;
+  margin: 1em 0;
+  border-left: 4px solid #009688;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.post img {
+  max-width: 100%;
+  margin-top: 0.5em;
+  border: 2px solid #ccc;
+}
