@@ -1,12 +1,12 @@
 
 async function loadPosts() {
   const container = document.getElementById('content');
-  const indexRes = await fetch('posts/index.json');
+  const indexRes = await fetch('./posts/index.json');
   const files = await indexRes.json();
   container.innerHTML = '';
 
   for (const file of files) {
-    const res = await fetch('posts/' + file);
+    const res = await fetch('./posts/' + file);
     const text = await res.text();
     const html = marked.parse(text.split('---')[2] || '');
     const meta = text.match(/---([\s\S]*?)---/)[1];
